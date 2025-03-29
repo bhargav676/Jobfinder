@@ -17,4 +17,7 @@ export default defineConfig({
     'emerald-light': 'var(--emerald-light)',
     slate: 'var(--slate)',
   },
+  build: {
+    chunkSizeWarningLimit: 1000, 
+  },
 })
