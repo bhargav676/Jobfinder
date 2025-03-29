@@ -1,0 +1,25 @@
+@import "tailwindcss";
+body {
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Custom Colors */
+@layer base {
+  :root {
+    --charcoal: #2D3748;
+    --emerald: #2B6CB0;
+    --emerald-dark: #1A4971;
+    --emerald-light: #E6F0FA;
+    --slate: #A0AEC0;
+  }
+}
