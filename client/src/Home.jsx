@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import JobList from "./components/JobList";
 import TrendingJobs from "./components/TrendingJobs";
-
 function App() {
   const [jobs, setJobs] = useState([]);
   const [location, setLocation] = useState("");
@@ -21,7 +20,7 @@ function App() {
     if (!location || !role) return;
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/jobs/fetch", {
+      const response = await axios.get(`${import.meta.env.VITE_BASE_homeapi}`, {
         params: { location, role, page: pageNum, limit: 10 },
       });
       setJobs(response.data.jobs);

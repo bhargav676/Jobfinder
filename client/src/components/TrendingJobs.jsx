@@ -8,7 +8,7 @@ function TrendingJobs() {
     const fetchTrending = async () => {
       try {
         console.log("Fetching trending jobs...");
-        const response = await axios.get("api/jobs/trending");
+        const response = await axios.get(`${import.meta.env.VITE_BASE_trendapi}`);
         console.log("Trending jobs response:", response.data);
         setTrendingJobs(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
