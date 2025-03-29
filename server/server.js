@@ -6,6 +6,13 @@ const jobRoutes = require('./models/jobs');
 
 dotenv.config();
 const app = express();
+app.use(
+  cors({
+    origin: "https://jobfinder-8zoms3qr1-bhargavks-projects.vercel.app",
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+  })
+);
 
 app.use(cors());
 app.use(express.json());
